@@ -5,7 +5,7 @@
             <div class="row mt-2">
             <div v-for="(items, index) in image" :key="index" class="col-4">
                 <div class="card">
-                <img :src="items.images" class="card-img-top" alt="...">
+                <img :src="items.images2" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{items.title}}</h5>
                     <p class="card-text">{{items.desc}}</p>
@@ -44,6 +44,10 @@ export default {
       const image = this.image.filter((item) => item.title === this.$route.params.project);
       return image[0].images;
     },
+    findImage() {
+      const image = this.image.filter((item) => item.title === this.$route.params.project);
+      return image[0].images2;
+    },
     description() {
       const image = this.image.filter((item) => item.title === this.$route.params.project);
       return image[0].desc;
@@ -63,13 +67,13 @@ export default {
     profile: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
     image: [
       {
-        images: '../img/nutziverse.png', title: 'Nutziverse', desc: 'Website untuk menghitung kebutuhan gizi sehari-hari', linkweb: 'https://warungmama.netlify.app/',
+        images: '../img/nutziverse.png', images2: 'img/nutziverse.png', title: 'Nutziverse', desc: 'Website untuk menghitung kebutuhan gizi sehari-hari', linkweb: 'https://warungmama.netlify.app/',
       },
       {
-        images: '../img/warungmama.png', title: 'WarungMama', desc: 'Website untuk menyediakan kebutuhan sehari-hari', linkweb: 'https://umah-bali.netlify.app/',
+        images: '../img/warungmama.png', images2: 'img/nutziverse.png', title: 'WarungMama', desc: 'Website untuk menyediakan kebutuhan sehari-hari', linkweb: 'https://umah-bali.netlify.app/',
       },
       {
-        images: '../img/umahbali.png', title: 'UmahBali', desc: 'Website untuk menyediakan informasi properti', linkweb: 'https://nutziverse.netlify.app/',
+        images: '../img/umahbali.png', images2: 'img/nutziverse.png', title: 'UmahBali', desc: 'Website untuk menyediakan informasi properti', linkweb: 'https://nutziverse.netlify.app/',
       },
     ],
     gambar: '',
