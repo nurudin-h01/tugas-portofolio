@@ -63,12 +63,14 @@ export default {
     profile: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
     image: [
       {
-        images: '../img/nutziverse.png', title: 'Nutziverse', desc: 'Website untuk menghitung kebutuhan gizi sehari-hari', linkweb: 'https://warungmama.netlify.app/' },
-      {
-        images: '../img/warungmama.png', title: 'WarungMama', desc: 'Website untuk menyediakan kebutuhan sehari-hari', linkweb: 'https://umah-bali.netlify.app/' 
+        images: '../img/nutziverse.png', title: 'Nutziverse', desc: 'Website untuk menghitung kebutuhan gizi sehari-hari', linkweb: 'https://warungmama.netlify.app/',
       },
       {
-        images: '../img/umahbali.png', title: 'UmahBali', desc: 'Website untuk menyediakan informasi properti', linkweb: 'https://nutziverse.netlify.app/' },
+        images: '../img/warungmama.png', title: 'WarungMama', desc: 'Website untuk menyediakan kebutuhan sehari-hari', linkweb: 'https://umah-bali.netlify.app/',
+      },
+      {
+        images: '../img/umahbali.png', title: 'UmahBali', desc: 'Website untuk menyediakan informasi properti', linkweb: 'https://nutziverse.netlify.app/',
+      },
     ],
     gambar: '',
   }),
