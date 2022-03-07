@@ -1,24 +1,32 @@
 <template>
     <div class="container">
         <div v-if="detail === undefined">
-            <div class="row mt-5">
+            <h2 class="text-center mt-5 mb-3 fw-bold" style="color: #645193ff">Detail Project</h2>
+            <div class="row mt-2">
             <div v-for="(items, index) in image" :key="index" class="col-4">
                 <div class="card">
                 <img :src="items.images" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{items.title}}</h5>
                     <p class="card-text">{{items.desc}}</p>
-                    <router-link class="btn" :to="{name: 'Project', params: {project: items.title}}">Detail</router-link>
+                    <router-link class="btn btn-outline-primary" :to="{name: 'Project', params: {project: items.title}}">Detail</router-link>
                 </div>
                 </div>
             </div>
             </div>
         </div>
         <div v-else>
-            <h1 class="text-center text-black">{{detail}}</h1>
-            <div class="d-flex justify-content-around mt-5">
-            <img :src="findID" alt="">
-            <h3 class="text-start">{{description}}</h3>
+            <h1 class="text-center fw-bold mt-5" style="color: #645193ff">{{detail}}</h1>
+            <div class="d-flex mt-5">
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img :src="findID" class="img-fluid" alt="">
+                </div>
+                <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+                  <h5 class="text-center">{{description}}</h5>
+                  <a :href="linkweb"><button class="btn btn-outline-primary mt-5">Go to website</button></a>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -40,6 +48,10 @@ export default {
       const image = this.image.filter((item) => item.title === this.$route.params.project);
       return image[0].desc;
     },
+    linkweb() {
+      const image = this.image.filter((item) => item.title === this.$route.params.project);
+      return image[0].linkweb;
+    },
   },
   methods: {
     toUppercase() {
@@ -50,11 +62,25 @@ export default {
   data: () => ({
     profile: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
     image: [
-      { images: 'https://media.istockphoto.com/photos/snowcapped-k2-peak-picture-id1288385045?b=1&k=20&m=1288385045&s=170667a&w=0&h=3M3ZRl1bxOGxcvmYZ-TOtuJ3idm0psm4c7GFba1TA5g=', title: 'Gunung Sumatra', desc: 'ini adalah gunung Sumatra' },
-      { images: 'https://media.istockphoto.com/photos/snowy-peaks-of-the-caucasus-mountains-picture-id1327243304?b=1&k=20&m=1327243304&s=170667a&w=0&h=eVHzfEbMv7ki-LY0p-KO4L7X19KaqMYe2GmfPwcrGjU=', title: 'Gunung Jawa', desc: 'ini adalah gunung Jawa' },
-      { images: 'https://media.istockphoto.com/photos/moose-at-maroon-lake-a-young-moose-with-only-one-antler-walking-and-picture-id1288537145?b=1&k=20&m=1288537145&s=170667a&w=0&h=DP5AU3_JBwGiCDJellQR6NMmrycDsrjd89yccPlVgJc=', title: 'Gunung Kalimantan', desc: 'ini adalah gunung Kalimantan' },
+      {
+        images: '../img/nutziverse.png', title: 'Nutziverse', desc: 'Website untuk menghitung kebutuhan gizi sehari-hari', linkweb: 'https://warungmama.netlify.app/' },
+      {
+        images: '../img/warungmama.png', title: 'WarungMama', desc: 'Website untuk menyediakan kebutuhan sehari-hari', linkweb: 'https://umah-bali.netlify.app/' 
+      },
+      {
+        images: '../img/umahbali.png', title: 'UmahBali', desc: 'Website untuk menyediakan informasi properti', linkweb: 'https://nutziverse.netlify.app/' },
     ],
     gambar: '',
   }),
 };
 </script>
+<style>
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    color: #645193ff !important;
+    border-color: #645193ff !important;
+}
+.btn-outline-primary:hover{
+  background-color: #645193ff !important;
+  color: white !important;
+}
+</style>

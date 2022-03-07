@@ -7,7 +7,7 @@
                     <input placeholder="Nama" type="text" class="form-control mx-auto my-2 w-75" id="exampleFormControlInput1" v-model="nama" >
                     <input placeholder="Email" type="email" class="form-control mx-auto my-2 w-75" id="exampleFormControlInput1" v-model="email" >
                     <textarea placeholder="Pesan" class="form-control my-2 w-75 mx-auto" id="exampleFormControlTextarea1" rows="3" v-model="pesan"></textarea>
-                    <input type="Submit" value="Send" class="btn btn-primary">
+                    <input type="Submit" value="Send" class="btn btn-primary" style="background-color: #645193ff;">
                 </form>
             </div>
         </div>
